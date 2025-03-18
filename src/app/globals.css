@@ -37,6 +37,9 @@ body{
 @theme{
   --color-light-blue: #F0F0F0;
   --color-light-gray: #F2F0F1;
+  --color-dark-gray: #F0EEED;
+  --color-gray: #666666;
+  --color-bold-gray: #999999;
 }
 
 @theme {
