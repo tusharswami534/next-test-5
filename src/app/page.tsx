@@ -1,4 +1,5 @@
 import Header from "@/components/common/Header";
+import DressStyle from "@/components/home/DressStyle";
 import Hero from "@/components/home/Hero";
 import NewArrival from "@/components/home/NewArrival";
 import Partner from "@/components/home/Partner";
@@ -12,6 +13,7 @@ export default function Home() {
       <Partner />
       <NewArrival />
       <TopSell />
+      <DressStyle />
     </>
   );
 }
