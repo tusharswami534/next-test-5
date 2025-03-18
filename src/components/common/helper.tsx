@@ -1,3 +1,11 @@
+import {
+  CalvinKleinLogo,
+  GucciLogo,
+  PradaLogo,
+  VersaceLogo,
+  ZaraLogo,
+} from "./icons";
+
 export const HEADER_LIST = [
   {
     title: "Shop",
@@ -20,4 +28,12 @@ export const HEADER_LIST = [
     title: "Brands",
     link: "#brands",
   },
+];
+
+export const PARTNER_LIST = [
+  <VersaceLogo logoClassName="max-sm:w-[116px]" />,
+  <ZaraLogo logoClassName="max-sm:w-[64px]" />,
+  <GucciLogo logoClassName="max-sm:w-[109px]" />,
+  <PradaLogo logoClassName="max-sm:w-[127px]" />,
+  <CalvinKleinLogo logoClassName="max-sm:w-[134px]" />,
 ];
