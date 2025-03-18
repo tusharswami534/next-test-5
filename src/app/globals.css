@@ -1,38 +1,44 @@
-@import "tailwindcss";
-
 @font-face {
-  font-family: 'IntegralCF';
-  font-weight: 700;
-  src: url('/public/assets/fonts/integral-cf/Fontspring-DEMO-integralcf-bold.otf');
+  font-family: 'integral-cf';
+  src: url("/assets/fonts/Fontspring-DEMO-integralcf-bold.otf");
 }
 
 @font-face {
   font-family: 'Satoshi';
   font-weight: 400;
-  src: url('/public/assets/fonts/satoshi-complete/Satoshi-Regular.otf');
+  src: url("/assets/fonts/Satoshi-Regular.otf");
 }
 
 @font-face {
   font-family: 'Satoshi';
   font-weight: 500;
-  src: url('/public/assets/fonts/satoshi-complete/Satoshi-Regular.otf');
+  src: url("/assets/fonts/Satoshi-Medium.otf");
 }
 
 @font-face {
   font-family: 'Satoshi';
   font-weight: 700;
-  src: url('/public/assets/fonts/satoshi-complete/Satoshi-Bold.otf');
+  src: url("/assets/fonts/Satoshi-Bold.otf");
 }
 
-*{
+@import "tailwindcss";
+
+
+body{
   font-family: 'Satoshi', sans-serif;
 }
 
 
 @theme {
   --text-custom-3xl: 32px;
+  --text-custom-6xl: 64px;
+}
+
+@theme{
+  --color-light-blue: #F0F0F0;
+  --color-light-gray: #F2F0F1;
 }
 
 @theme {
-  --font-integral-cf: "IntegralCF", "sans-serif";
+  --font-integral-cf: "integral-cf", "sans-serif";
 }
