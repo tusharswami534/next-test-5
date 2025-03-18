@@ -1,8 +1,11 @@
 import {
   CalvinKleinLogo,
   FourAndHalfStart,
+  FourStart,
+  FullStart,
   GucciLogo,
   PradaLogo,
+  ThreeStart,
   VersaceLogo,
   ZaraLogo,
 } from "./icons";
@@ -13,7 +16,7 @@ interface HeaderListType {
   submenu?: { title: string; link: string }[];
 }
 
-interface NewArrivalType {
+export interface SellItemsType {
   product: string;
   productTitle: string;
   productRatingStart: any;
@@ -56,7 +59,7 @@ export const PARTNER_LIST: any = [
   <CalvinKleinLogo logoClassName="max-sm:w-[134px]" />,
 ];
 
-export const NEW_ARRIVALS_LIST: NewArrivalType[] = [
+export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   {
     product: "/assets/image/webp/t-shirt-tape-details.webp",
     productTitle: "T-SHIRT WITH TAPE DETAILS",
@@ -71,7 +74,7 @@ export const NEW_ARRIVALS_LIST: NewArrivalType[] = [
     productTitle: "SKINNY FIT JEANS",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
-    productPrice: 120,
+    productPrice: 240,
     discount: -20,
     price: 260,
     productDescription:
@@ -82,7 +85,7 @@ export const NEW_ARRIVALS_LIST: NewArrivalType[] = [
     productTitle: "CHECKERED SHIRT",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
-    productPrice: 120,
+    productPrice: 180,
     productDescription:
       "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
   },
@@ -91,9 +94,49 @@ export const NEW_ARRIVALS_LIST: NewArrivalType[] = [
     productTitle: "SLEEVE STRIPED T-SHIRT",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
-    productPrice: 120,
+    productPrice: 130,
+    discount: -30,
+    price: 160,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+];
+export const TOP_SELLING_LIST: SellItemsType[] = [
+  {
+    product: "/assets/image/webp/vertical-striped-shirt.webp",
+    productTitle: "VERTICAL STRIPED SHIRT",
+    productRatingStart: <FullStart />,
+    productRating: 5,
+    productPrice: 212,
     discount: -20,
-    price: 260,
+    price: 232,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/courage-graphic-t-shirt.webp",
+    productTitle: "COURAGE GRAPHIC T-SHIRT",
+    productRatingStart: <FourStart />,
+    productRating: 4,
+    productPrice: 145,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/loose-fit-bermuda-shorts.webp",
+    productTitle: "LOOSE FIT BERMUDA SHORTS",
+    productRatingStart: <ThreeStart />,
+    productRating: 3,
+    productPrice: 80,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/faded-skinny-jeans.webp",
+    productTitle: "FADED SKINNY JEANS",
+    productRatingStart: <FourAndHalfStart />,
+    productRating: 4.5,
+    productPrice: 210,
     productDescription:
       "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
   },

@@ -40,6 +40,7 @@ body{
   --color-dark-gray: #F0EEED;
   --color-gray: #666666;
   --color-bold-gray: #999999;
+  --color-red: #FF3333;
 }
 
 @theme {
