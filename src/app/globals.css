@@ -31,6 +31,7 @@ body{
 
 @theme {
   --text-custom-3xl: 32px;
+  --text-custom-4xl: 40px;
   --text-custom-6xl: 64px;
 }
 

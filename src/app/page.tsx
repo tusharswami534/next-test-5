@@ -1,3 +1,4 @@
+import About from "@/components/common/About";
 import Header from "@/components/common/Header";
 import DressStyle from "@/components/home/DressStyle";
 import Hero from "@/components/home/Hero";
@@ -14,6 +15,7 @@ export default function Home() {
       <NewArrival />
       <TopSell />
       <DressStyle />
+      <About />
     </>
   );
 }
