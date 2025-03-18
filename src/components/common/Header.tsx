@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { HEADER_LIST } from "./helper";
-import { CartIcon, DropDownArrow, SearchIcon } from "./icons";
+import { HEADER_LIST } from "../../utils/helper";
+import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

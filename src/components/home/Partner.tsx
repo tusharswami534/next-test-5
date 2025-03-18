@@ -1,5 +1,5 @@
 import React from "react";
-import { PARTNER_LIST } from "../common/helper";
+import { PARTNER_LIST } from "../../utils/helper";
 
 const Partner = () => {
   return (
