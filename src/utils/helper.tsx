@@ -23,6 +23,8 @@ interface HeaderListType {
 
 export interface SellItemsType {
   product: string;
+  productImageTwo?: string;
+  productImageThree?: string;
   productTitle: string;
   productRatingStart: any;
   productRating: number;
@@ -67,6 +69,8 @@ export const PARTNER_LIST: any = [
 export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   {
     product: "/assets/image/webp/t-shirt-tape-details.webp",
+    productImageTwo: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageThree: "/assets/image/webp/checkered-shirt.webp",
     productTitle: "T-SHIRT WITH TAPE DETAILS",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
@@ -76,6 +80,8 @@ export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/skinny-fit-jeans.webp",
+    productImageTwo: "/assets/image/webp/loose-fit-bermuda-shorts.webp",
+    productImageThree: "/assets/image/webp/faded-skinny-jeans.webp",
     productTitle: "SKINNY FIT JEANS",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
@@ -87,6 +93,8 @@ export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/checkered-shirt.webp",
+    productImageTwo: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
     productTitle: "CHECKERED SHIRT",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
@@ -96,6 +104,8 @@ export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/sleeve-striped-t-shirt.webp",
+    productImageTwo: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageThree: "/assets/image/webp/checkered-shirt.webp",
     productTitle: "SLEEVE STRIPED T-SHIRT",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
@@ -110,6 +120,8 @@ export const NEW_ARRIVALS_LIST: SellItemsType[] = [
 export const TOP_SELLING_LIST: SellItemsType[] = [
   {
     product: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageTwo: "/assets/image/webp/checkered-shirt.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
     productTitle: "VERTICAL STRIPED SHIRT",
     productRatingStart: <FullStart />,
     productRating: 5,
@@ -121,6 +133,8 @@ export const TOP_SELLING_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/courage-graphic-t-shirt.webp",
+    productImageTwo: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
     productTitle: "COURAGE GRAPHIC T-SHIRT",
     productRatingStart: <FourStart />,
     productRating: 4,
@@ -130,6 +144,8 @@ export const TOP_SELLING_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/loose-fit-bermuda-shorts.webp",
+    productImageTwo: "/assets/image/webp/faded-skinny-jeans.webp",
+    productImageThree: "/assets/image/webp/skinny-fit-jeans.webp",
     productTitle: "LOOSE FIT BERMUDA SHORTS",
     productRatingStart: <ThreeStart />,
     productRating: 3,
@@ -139,10 +155,63 @@ export const TOP_SELLING_LIST: SellItemsType[] = [
   },
   {
     product: "/assets/image/webp/faded-skinny-jeans.webp",
+    productImageTwo: "/assets/image/webp/loose-fit-bermuda-shorts.webp",
+    productImageThree: "/assets/image/webp/skinny-fit-jeans.webp",
     productTitle: "FADED SKINNY JEANS",
     productRatingStart: <FourAndHalfStart />,
     productRating: 4.5,
     productPrice: 210,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+];
+
+export const ALSO_LIST_LIST: SellItemsType[] = [
+  {
+    product: "/assets/image/webp/polo-with-contrast-trims.webp",
+    productImageTwo: "/assets/image/webp/checkered-shirt.webp",
+    productImageThree: "/assets/image/webp/polo-with-tipping-details.webp",
+    productTitle: "Polo with Contrast Trims",
+    productRatingStart: <FourStart />,
+    productRating: 4,
+    productPrice: 212,
+    discount: -20,
+    price: 222,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/gradient-graphic-t-shirt.webp",
+    productImageTwo: "/assets/image/webp/vertical-striped-shirt.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
+    productTitle: "Gradient Graphic T-shirt",
+    productRatingStart: <ThreeAndHalfStart />,
+    productRating: 3,
+    productPrice: 145,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/polo-with-tipping-details.webp",
+    productImageTwo: "/assets/image/webp/black-striped-t-shirt.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
+    productTitle: "Polo with Tipping Details",
+    productRatingStart: <FourAndHalfStart />,
+    productRating: 4.5,
+    productPrice: 180,
+    productDescription:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+  },
+  {
+    product: "/assets/image/webp/black-striped-t-shirt.webp",
+    productImageTwo: "/assets/image/webp/polo-with-tipping-details.webp",
+    productImageThree: "/assets/image/webp/sleeve-striped-t-shirt.webp",
+    productTitle: "Black Striped T-shirt",
+    productRatingStart: <FourAndHalfStart />,
+    productRating: 4.5,
+    productPrice: 120,
+    discount: -30,
+    price: 150,
     productDescription:
       "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
   },

@@ -1,22 +1,27 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const ShowsImage = () => {
-  const [selectedImage, setSelectedImage] = useState(
-    "/assets/image/webp/skinny-fit-jeans.webp"
-  );
+const ShowsImage = ({
+  productImage,
+  productImageTwo,
+  productImageThree,
+}: {
+  productImage?: any;
+  productImageTwo?: any;
+  productImageThree?: any;
+}) => {
+  // Set the initial image to productImage
+  const [selectedImage, setSelectedImage] = useState(productImage || "");
 
   return (
     <div className="flex gap-3.5">
       <div className="flex flex-col gap-3.5">
         <div
           className="cursor-pointer rounded-[20px] overflow-hidden"
-          onClick={() =>
-            setSelectedImage("/assets/image/webp/skinny-fit-jeans.webp")
-          }
+          onClick={() => setSelectedImage(productImage)}
         >
           <Image
-            src="/assets/image/webp/skinny-fit-jeans.webp"
+            src={productImage || ""}
             width={152}
             height={167}
             alt="Skinny Fit Jeans"
@@ -25,12 +30,10 @@ const ShowsImage = () => {
         </div>
         <div
           className="cursor-pointer rounded-[20px] overflow-hidden"
-          onClick={() =>
-            setSelectedImage("/assets/image/webp/t-shirt-tape-details.webp")
-          }
+          onClick={() => setSelectedImage(productImageTwo)}
         >
           <Image
-            src="/assets/image/webp/t-shirt-tape-details.webp"
+            src={productImageTwo || ""}
             width={152}
             height={167}
             alt="T-Shirt with Tape Details"
@@ -39,12 +42,10 @@ const ShowsImage = () => {
         </div>
         <div
           className="cursor-pointer rounded-[20px] overflow-hidden"
-          onClick={() =>
-            setSelectedImage("/assets/image/webp/vertical-striped-shirt.webp")
-          }
+          onClick={() => setSelectedImage(productImageThree)}
         >
           <Image
-            src="/assets/image/webp/vertical-striped-shirt.webp"
+            src={productImageThree || ""}
             width={152}
             height={167}
             alt="Vertical Striped Shirt"
@@ -53,13 +54,18 @@ const ShowsImage = () => {
         </div>
       </div>
       <div className="rounded-[20px] bg-light-blue overflow-hidden">
-        <Image
-          src={selectedImage}
-          width={444}
-          height={530}
-          alt="Selected Product"
-          className="w-[444px] h-[530px] object-cover"
-        />
+        {/* Display the selected image */}
+        {selectedImage ? (
+          <Image
+            src={selectedImage}
+            width={444}
+            height={530}
+            alt="Selected Product"
+            className="w-[444px] h-[530px] object-cover"
+          />
+        ) : (
+          <p>No Image Available</p>
+        )}
       </div>
     </div>
   );
