@@ -29,7 +29,7 @@ const Reviews = () => {
             >
               <Link
                 href={`?tab=${itemSlug}`}
-                className={`text-center text-xl leading-[100%] ${
+                className={`text-center text-xl max-sm:text-base max-md:text-lg whitespace-nowrap leading-[100%] ${
                   isActive && "font-medium"
                 }`}
               >
