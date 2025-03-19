@@ -195,7 +195,7 @@ export const REVIEWS_LIST = [
   },
 ];
 
-export const SOCAL_MEDIA_LIST = [
+export const FOOTER_SOCAL_MEDIA_LIST = [
   {
     icon: <TwitterIcon pathClass="group-hover:fill-white" />,
     link: "https://x.com/?lang=en",
@@ -212,4 +212,51 @@ export const SOCAL_MEDIA_LIST = [
     icon: <GitHubIcon pathClass="group-hover:fill-white" />,
     link: "https://x.com/?lang=en",
   },
+];
+
+export const FOOTER_LIST = [
+  {
+    title: "Company",
+    list: [
+      { title: "About", link: "/about" },
+      { title: "Features", link: "/features" },
+      { title: "Works", link: "/works" },
+      { title: "Career", link: "/career" },
+    ],
+  },
+  {
+    title: "Help",
+    list: [
+      { title: "Customer Support", link: "/customer-support" },
+      { title: "Delivery-details", link: "/delivery-details" },
+      { title: "Terms & Conditions", link: "/terms-conditions" },
+      { title: "Privacy Policy", link: "/privacy-policy" },
+    ],
+  },
+  {
+    title: "FAQ",
+    list: [
+      { title: "Account", link: "/about" },
+      { title: "Manage Deliveries", link: "/manage-deliveries" },
+      { title: "Orders", link: "/orders" },
+      { title: "Payments", link: "/payments" },
+    ],
+  },
+  {
+    title: "Resources",
+    list: [
+      { title: "Free eBooks", link: "/free-ebooks" },
+      { title: "Development Tutorial", link: "/development-tutorial" },
+      { title: "How to - Blog", link: "/how-to-blog" },
+      { title: "Youtube Playlist", link: "/youtube-playlist" },
+    ],
+  },
+];
+
+export const PAYMENTS_METHOD_LIST = [
+  "/assets/image/webp/visa.webp",
+  "/assets/image/webp/master-card.webp",
+  "/assets/image/webp/paypal.webp",
+  "/assets/image/webp/apple-pay.webp",
+  "/assets/image/webp/g-pay.webp",
 ];

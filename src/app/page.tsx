@@ -15,7 +15,6 @@ export default function Home() {
       <NewArrival />
       <TopSell />
       <DressStyle />
-      <About />
     </>
   );
 }
