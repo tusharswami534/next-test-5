@@ -1,10 +1,14 @@
 "use client";
 import Image from "next/image";
 import ShowsImage from "./ShowsImage";
-import { FourAndHalfStart } from "@/utils/icons";
+import { FourAndHalfStart, SelectIcon } from "@/utils/icons";
 import CommonDescription from "../common/CommonDescription";
+import { SELECT_COLOR, SELECT_SIZE } from "@/utils/helper";
+import { useState } from "react";
 
 const ProductOverview = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeButton, setActiveButton] = useState(0);
   return (
     <div>
       <div className="max-w-[1240px] mx-auto container">
@@ -41,7 +45,35 @@ const ProductOverview = () => {
               descriptionClass="text-black/60"
               text="Select Colors"
             />
-            <div className=""></div>
+            <div className="flex gap-4 mt-4">
+              {SELECT_COLOR.map((item, index) => (
+                <button
+                  key={index}
+                  className={`size-7 cursor-pointer flex justify-center items-center rounded-full bg-dark-${item}`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {index === activeIndex && <SelectIcon />}
+                </button>
+              ))}
+            </div>
+            <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
+            <CommonDescription
+              descriptionClass="text-black/60"
+              text="Select Colors"
+            />
+            <div className="flex gap-3 mt-4">
+              {SELECT_SIZE.map((item, index) => (
+                <button
+                  onClick={() => setActiveButton(index)}
+                  key={index}
+                  className={`cursor-pointer bg-light-blue py-3 px-6 rounded-[62px] ${
+                    index === activeButton && "!bg-black text-white"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

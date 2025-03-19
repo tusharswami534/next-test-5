@@ -260,3 +260,7 @@ export const PAYMENTS_METHOD_LIST = [
   "/assets/image/webp/apple-pay.webp",
   "/assets/image/webp/g-pay.webp",
 ];
+
+export const SELECT_COLOR = ["brown", "green", "blue"];
+
+export const SELECT_SIZE = ["Small", "Medium", "Large", "X-Large"];
