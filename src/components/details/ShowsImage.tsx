@@ -10,12 +10,11 @@ const ShowsImage = ({
   productImageTwo?: any;
   productImageThree?: any;
 }) => {
-  // Set the initial image to productImage
   const [selectedImage, setSelectedImage] = useState(productImage || "");
 
   return (
-    <div className="flex gap-3.5">
-      <div className="flex flex-col gap-3.5">
+    <div className="flex gap-3.5 max-xl:flex-col-reverse">
+      <div className="flex flex-col max-xl:flex-row max-xl:justify-center gap-3.5">
         <div
           className="cursor-pointer rounded-[20px] overflow-hidden"
           onClick={() => setSelectedImage(productImage)}
@@ -25,7 +24,7 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="Skinny Fit Jeans"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
         <div
@@ -37,7 +36,7 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="T-Shirt with Tape Details"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
         <div
@@ -49,19 +48,18 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="Vertical Striped Shirt"
-            className="w-[152px] h-[167px] object-cover bg-light-blue"
+            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
           />
         </div>
       </div>
-      <div className="rounded-[20px] bg-light-blue overflow-hidden">
-        {/* Display the selected image */}
+      <div className="rounded-[20px] bg-light-blue max-xl:justify-center max-xl:flex overflow-hidden">
         {selectedImage ? (
           <Image
             src={selectedImage}
             width={444}
             height={530}
             alt="Selected Product"
-            className="w-[444px] h-[530px] object-cover"
+            className="w-[444px] h-[530px] max-md:h-[450px] max-sm:h-[290px] max-xl:h-[446px] object-cover max-sm:object-contain"
           />
         ) : (
           <p>No Image Available</p>

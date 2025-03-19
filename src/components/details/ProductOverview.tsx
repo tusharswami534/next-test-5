@@ -1,23 +1,27 @@
 "use client";
-import Image from "next/image";
 import ShowsImage from "./ShowsImage";
-import { FourAndHalfStart, SelectIcon } from "@/utils/icons";
-import CommonDescription from "../common/CommonDescription";
 import {
   ALSO_LIST_LIST,
   NEW_ARRIVALS_LIST,
-  SELECT_COLOR,
-  SELECT_SIZE,
   TOP_SELLING_LIST,
 } from "@/utils/helper";
-import { useState } from "react";
-import CustomButton from "../common/CustomButton";
 import { useParams } from "next/navigation";
 import ProductInfo from "./ProductInfo";
+import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 const ProductOverview = () => {
   const params = useParams();
   const { title } = params;
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
   console.log("Title from params:", title);
 
   const combinedList = [
@@ -37,9 +41,10 @@ const ProductOverview = () => {
   console.log("Selected Product:", product);
 
   return (
-    <div>
+    <div className="px-4">
+      <ToastContainer position="top-right" />
       <div className="max-w-[1240px] mx-auto container">
-        <div className="flex gap-10">
+        <div className="flex gap-10 max-xl:flex-col">
           <ShowsImage
             productImage={product?.product}
             productImageTwo={product?.productImageTwo}
@@ -53,6 +58,9 @@ const ProductOverview = () => {
             productDiscount={product?.discount}
             price={product?.price}
             productPrice={product?.productPrice}
+            cart={cart}
+            setCart={setCart}
+            productImage={product?.product}
           />
         </div>
       </div>

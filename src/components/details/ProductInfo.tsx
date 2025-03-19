@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import CommonDescription from "../common/CommonDescription";
-import { FourAndHalfStart, SelectIcon } from "@/utils/icons";
+import { SelectIcon } from "@/utils/icons";
 import { SELECT_COLOR, SELECT_SIZE } from "@/utils/helper";
 import CustomButton from "../common/CustomButton";
+import { toast } from "react-toastify";
 
 const ProductInfo = ({
   productTitle,
@@ -13,6 +14,9 @@ const ProductInfo = ({
   productPrice,
   productDiscount,
   productDescription,
+  cart,
+  setCart,
+  productImage,
 }: {
   productTitle: string;
   productStart: any;
@@ -21,13 +25,38 @@ const ProductInfo = ({
   productPrice: number;
   productDiscount: any;
   productDescription: string;
+  cart: any[];
+  setCart: Function;
+  productImage: string;
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeButton, setActiveButton] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
+  const handleAddToCart = () => {
+    const selectedProduct = {
+      title: productTitle,
+      image: productImage,
+      color: SELECT_COLOR[activeIndex],
+      size: SELECT_SIZE[activeButton],
+      quantity: quantity,
+      price: productPrice,
+    };
+
+    const exists = cart.some((item) => item.title === selectedProduct.title);
+
+    if (!exists) {
+      const updatedCart = [...cart, selectedProduct];
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      toast.success("Item Added To Your Cart");
+    } else {
+      toast.error("This Item Allready Exists In Your Cart");
+    }
+  };
+
   return (
-    <div className="max-w-[600px] w-full flex flex-col">
+    <div className="max-w-[600px] max-xl:max-w-[unset] w-full flex flex-col">
       <p className="font-integral-cf font-bold text-custom-4xl mb-3.5 max-sm:mb-3 leading-[100%]">
         {productTitle}
       </p>
@@ -57,7 +86,7 @@ const ProductInfo = ({
         descriptionClass="text-black/60 mt-5"
         text={productDescription}
       />
-      <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
       <CommonDescription
         descriptionClass="text-black/60"
         text="Select Colors"
@@ -73,14 +102,14 @@ const ProductInfo = ({
           </button>
         ))}
       </div>
-      <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
       <CommonDescription descriptionClass="text-black/60" text="Choose Size" />
-      <div className="flex gap-3 mt-4">
+      <div className="flex gap-3 max-sm:gap-2 mt-4">
         {SELECT_SIZE.map((item, index) => (
           <button
             onClick={() => setActiveButton(index)}
             key={index}
-            className={`cursor-pointer bg-light-blue py-3 px-6 rounded-[62px] ${
+            className={`cursor-pointer bg-light-blue whitespace-nowrap max-sm:text-sm max-sm:py-2.5 max-sm:px-5 py-3 px-6 rounded-[62px] ${
               index === activeButton && "!bg-black text-white"
             }`}
           >
@@ -88,7 +117,7 @@ const ProductInfo = ({
           </button>
         ))}
       </div>
-      <div className="max-w-[590px] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
       <div className="flex gap-5">
         <div className="bg-light-blue rounded-[62px] flex py-3.5 px-5 items-center gap-[38px]">
           <button
@@ -102,8 +131,9 @@ const ProductInfo = ({
           ></button>
         </div>
         <CustomButton
-          buttonClass="w-full py-[13px] bg-black text-white hover:bg-white hover:text-black"
+          buttonClass="w-full py-[13px] max-xl:max-w-[400px] bg-black text-white hover:bg-white hover:text-black"
           buttonText="Add to Cart"
+          customOnClick={handleAddToCart}
         />
       </div>
     </div>
