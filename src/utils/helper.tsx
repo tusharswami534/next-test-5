@@ -1,12 +1,16 @@
 import {
   CalvinKleinLogo,
+  FaceBookIcon,
   FourAndHalfStart,
   FourStart,
   FullStart,
+  GitHubIcon,
   GucciLogo,
+  InstagramIcon,
   PradaLogo,
   ThreeAndHalfStart,
   ThreeStart,
+  TwitterIcon,
   VersaceLogo,
   ZaraLogo,
 } from "./icons";
@@ -188,5 +192,24 @@ export const REVIEWS_LIST = [
     description:
       "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter.",
     postDate: "Posted on August 19, 2023",
+  },
+];
+
+export const SOCAL_MEDIA_LIST = [
+  {
+    icon: <TwitterIcon pathClass="group-hover:fill-white" />,
+    link: "https://x.com/?lang=en",
+  },
+  {
+    icon: <FaceBookIcon pathClass="group-hover:fill-white" />,
+    link: "https://x.com/?lang=en",
+  },
+  {
+    icon: <InstagramIcon pathClass="group-hover:fill-white" />,
+    link: "https://x.com/?lang=en",
+  },
+  {
+    icon: <GitHubIcon pathClass="group-hover:fill-white" />,
+    link: "https://x.com/?lang=en",
   },
 ];
