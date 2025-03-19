@@ -8,7 +8,6 @@ import {
   PAYMENTS_METHOD_LIST,
 } from "@/utils/helper";
 import Image from "next/image";
-// background: linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(240,240,240,1) 30%);
 
 const Footer = () => {
   const year = new Date().getFullYear();
