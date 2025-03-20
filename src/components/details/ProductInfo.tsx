@@ -28,11 +28,10 @@ const ProductInfo = ({
   setCart: Function;
   productImage: string;
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0); // For color
-  const [activeButton, setActiveButton] = useState(0); // For size
+  const [activeIndex, setActiveIndex] = useState(0); 
+  const [activeButton, setActiveButton] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
-  // Load selected values from localStorage when the component mounts
   useEffect(() => {
     const storedColorIndex = localStorage.getItem("selectedColorIndex");
     const storedSizeIndex = localStorage.getItem("selectedSizeIndex");
@@ -45,7 +44,7 @@ const ProductInfo = ({
     }
   }, []);
 
-  // Save selected values to localStorage when they change
+ 
   useEffect(() => {
     localStorage.setItem("selectedColorIndex", activeIndex.toString());
     localStorage.setItem("selectedSizeIndex", activeButton.toString());
