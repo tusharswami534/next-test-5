@@ -42,7 +42,7 @@ const ProductOverview = () => {
 
   return (
     <div className="px-4">
-      <ToastContainer position="top-right" />
+      <ToastContainer position="top-center" />
       <div className="max-w-[1240px] mx-auto container">
         <div className="flex gap-10 max-xl:flex-col">
           <ShowsImage
