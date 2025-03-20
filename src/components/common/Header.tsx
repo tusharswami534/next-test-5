@@ -3,19 +3,10 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HEADER_LIST } from "../../utils/helper";
 import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
+import { cartItemLength } from "../cart/Cart";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartLength, setCartLength] = useState(0);
-  console.log(cartLength);
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      const cart = JSON.parse(storedCart);
-      setCartLength(cart.length);
-    }
-  }, []);
 
   return (
     <div className="px-4">
@@ -106,7 +97,7 @@ const Header = () => {
               <Link href={"/cart"} className="relative">
                 <CartIcon />
                 <span className=" absolute top-[-15px] right-[-5px]">
-                  {cartLength}
+                  {cartItemLength}
                 </span>
               </Link>
             </div>

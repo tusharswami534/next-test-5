@@ -14,10 +14,13 @@ interface CartItem {
   quantity: number;
   price: number;
 }
+let cartItemLength = 0;
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const quantityNumber = cartItems.filter((item) => item.quantity);
+  cartItemLength = cartItems.length;
+
+  console.log(cartItemLength);
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -180,5 +183,7 @@ const Cart = () => {
     </div>
   );
 };
+
+export { cartItemLength };
 
 export default Cart;
