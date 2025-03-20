@@ -1,6 +1,6 @@
 import React from "react";
 interface CustomButtonProps {
-  buttonText: string;
+  buttonText?: string;
   buttonClass?: string;
   arrow?: any;
   customOnClick?: () => void;

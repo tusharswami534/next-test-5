@@ -58,3 +58,13 @@ body{
 .footer-bg{
   background: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(240,240,240,1) 15%);
 }
+
+
+
+.happy-swiper .swiper-wrapper .swiper-slide{
+  filter: blur(4px);
+}
+
+.happy-swiper .swiper-wrapper .swiper-slide-active , .swiper-slide-next , .swiper-slide-prev{
+  filter: blur(0px) !important;
+}

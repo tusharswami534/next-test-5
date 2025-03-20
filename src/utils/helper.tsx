@@ -66,6 +66,45 @@ export const PARTNER_LIST: any = [
   <CalvinKleinLogo logoClassName="max-sm:w-[134px]" />,
 ];
 
+export const HAPPY_CUSTOMERS_LIST = [
+  {
+    reviewsStart: <FullStart />,
+    userName: "Sarah M.",
+    description:
+      "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+  },
+  {
+    reviewsStart: <FullStart />,
+    userName: "Alex K.",
+    description:
+      "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+  },
+  {
+    reviewsStart: <FullStart />,
+    userName: "James L.",
+    description:
+      "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+  },
+  {
+    reviewsStart: <FullStart />,
+    userName: "Sarah M.",
+    description:
+      "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+  },
+  {
+    reviewsStart: <FullStart />,
+    userName: "Alex K.",
+    description:
+      "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+  },
+  {
+    reviewsStart: <FullStart />,
+    userName: "James L.",
+    description:
+      "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+  },
+];
+
 export const COUNT_LIST = [
   {
     description: "International Brands",
@@ -345,3 +384,12 @@ export const PAYMENTS_METHOD_LIST = [
 export const SELECT_COLOR = ["bg-dark-brown", "bg-dark-green", "bg-dark-blue"];
 
 export const SELECT_SIZE = ["Small", "Medium", "Large", "X-Large"];
+
+
+// navigation={{
+//   nextEl: ".custom-next",
+//   prevEl: ".custom-prev",
+// }}
+
+
+
