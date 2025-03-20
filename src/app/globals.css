@@ -28,6 +28,8 @@ body{
   font-family: 'Satoshi', sans-serif;
 }
 
+*{  scroll-behavior: smooth;}
+
 
 @theme {
   --text-custom-3xl: 32px;

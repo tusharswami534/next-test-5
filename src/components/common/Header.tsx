@@ -7,6 +7,7 @@ import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [cartLength, setCartLength] = useState(0);
+  console.log(cartLength);
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");

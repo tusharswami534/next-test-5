@@ -28,7 +28,7 @@ const ProductInfo = ({
   setCart: Function;
   productImage: string;
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0); 
+  const [activeIndex, setActiveIndex] = useState(0);
   const [activeButton, setActiveButton] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
@@ -44,7 +44,6 @@ const ProductInfo = ({
     }
   }, []);
 
- 
   useEffect(() => {
     localStorage.setItem("selectedColorIndex", activeIndex.toString());
     localStorage.setItem("selectedSizeIndex", activeButton.toString());

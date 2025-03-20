@@ -9,6 +9,8 @@ import { useParams } from "next/navigation";
 import ProductInfo from "./ProductInfo";
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
+import { RoutingIcon } from "@/utils/icons";
+import Link from "next/link";
 
 const ProductOverview = () => {
   const params = useParams();
@@ -46,7 +48,32 @@ const ProductOverview = () => {
   return (
     <div className="px-4">
       <ToastContainer position="top-center" />
-      <div className="max-w-[1240px] mx-auto container">
+      <div className="max-w-[1240px] border-t border-solid border-black/10 pt-6 mx-auto container">
+        <div className="flex gap-3 max-sm:gap-1.5 items-center mb-9">
+          <Link
+            href={"/"}
+            className="flex gap-1 max-sm:text-sm text-black/60 items-center"
+          >
+            Home{" "}
+            <span>
+              <RoutingIcon />
+            </span>
+            Shop
+            <span>
+              <RoutingIcon />
+            </span>
+            Men
+            <span>
+              <RoutingIcon />
+            </span>
+          </Link>
+          <Link
+            href={"/cart"}
+            className="flex gap-1 max-sm:text-sm text-black items-center"
+          >
+            T-shirts
+          </Link>
+        </div>
         <div className="flex gap-10 max-xl:flex-col">
           <ShowsImage
             productImage={product?.product}

@@ -13,7 +13,7 @@ import CommonDescription from "../common/CommonDescription";
 
 const HappyCustomers = () => {
   return (
-    <div className="max-sm:px-4 pb-20 max-sm:pb-[50px] max-md:pb-14 max-lg:pb-16">
+    <div className="max-sm:px-4 pb-20 max-sm:pb-[50px] max-w-[1920px] mx-auto max-md:pb-14 max-lg:pb-16">
       <div className="max-w-[1240px] max-[1240px]:px-4 max-sm:px-0 w-full mx-auto container">
         <div className="w-full flex  items-center justify-between pb-10 ">
           <Heading text="OUR HAPPY CUSTOMERS" headingClassName="text-left" />

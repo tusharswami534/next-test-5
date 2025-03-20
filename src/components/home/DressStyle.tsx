@@ -4,7 +4,7 @@ import Heading from "../common/Heading";
 
 const DressStyle = () => {
   return (
-    <div className="pb-20 max-sm:px-4 max-sm:pb-[50px] px-5">
+    <div id="dress-style" className="pb-20 max-sm:px-4 max-sm:pb-[50px] px-5">
       <div className="max-w-[1240px] rounded-[40px] bg-light-blue container mx-auto pt-[70px] flex flex-col gap-5 pb-[76px] px-[64px] max-sm:py-10 max-sm:px-6">
         <Heading text="BROWSE BY dress STYLE" headingClassName="pb-[64px]" />
         <div className="flex max-lg:flex-col w-full gap-5">

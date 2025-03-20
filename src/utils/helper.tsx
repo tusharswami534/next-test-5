@@ -42,7 +42,7 @@ export const HEADER_LIST: HeaderListType[] = [
       { title: "item 1", link: "#item 1" },
       { title: "item 2", link: "#item 2" },
       { title: "item 3", link: "#item 3" },
-    ],
+    ],  
   },
   {
     title: "On Sale",
@@ -50,7 +50,7 @@ export const HEADER_LIST: HeaderListType[] = [
   },
   {
     title: "New Arrivals",
-    link: "#new-arrivals",
+    link: "#new-arrival",
   },
   {
     title: "Brands",
@@ -384,12 +384,3 @@ export const PAYMENTS_METHOD_LIST = [
 export const SELECT_COLOR = ["bg-dark-brown", "bg-dark-green", "bg-dark-blue"];
 
 export const SELECT_SIZE = ["Small", "Medium", "Large", "X-Large"];
-
-
-// navigation={{
-//   nextEl: ".custom-next",
-//   prevEl: ".custom-prev",
-// }}
-
-
-

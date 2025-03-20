@@ -3,7 +3,7 @@ import { PARTNER_LIST } from "../../utils/helper";
 
 const Partner = () => {
   return (
-    <div className="bg-black px-4">
+    <div id="partner" className="bg-black px-4">
       <div className="max-w-[1240px] container mx-auto py-[42px] max-xl:py-10">
         <div className="flex flex-wrap items-center justify-center gap-[105px] max-lg:gap-24 max-md:gap-16 max-sm:gap-y-5 max-sm:gap-8">
           {PARTNER_LIST.map((item: any, index: number) => (

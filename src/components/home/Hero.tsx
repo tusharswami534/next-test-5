@@ -14,7 +14,7 @@ const Hero = () => {
     onChange: (inView) => setCount(inView),
   });
   return (
-    <div className="bg-light-gray">
+    <div id="hero" className="bg-light-gray">
       <div className="max-w-[1240px] max-xl:pl-4 max-lg:pl-0 pt-[103px] max-sm:pt-10 max-md:pt-20 max-lg:pt-24 lg:pb-[116px] relative container mx-auto">
         <div className="max-w-[577px] max-lg:px-4 max-lg:max-w-[unset] relative z-20">
           <h1 className="text-custom-6xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl font-bold font-integral-cf leading-[100%]">

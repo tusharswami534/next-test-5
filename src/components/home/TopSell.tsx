@@ -4,7 +4,7 @@ import { TOP_SELLING_LIST } from "@/utils/helper";
 
 const TopSell = () => {
   return (
-    <div className="px-4">
+    <div id="top-sell" className="px-4">
       <div className="max-w-[1240px] pt-[72px] pb-20 max-sm:pt-10 max-sm:pb-[50px] mx-auto">
         <SellItems
           heading="top selling"
