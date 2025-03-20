@@ -3,7 +3,7 @@ import { MailIcon } from "@/utils/icons";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import CustomButton from "./CustomButton";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const About = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -42,6 +42,7 @@ const About = () => {
 
   return (
     <div>
+      <ToastContainer position="top-center" />
       <div className="max-w-[1240px] mx-auto rounded-[20px] flex max-lg:flex-col max-lg:justify-start max-lg:items-start max-lg:gap-8 items-center justify-between bg-black container py-[43px] px-[64px] max-sm:px-6 max-sm:py-8 max-md:px-7 max-md:py-10 max-lg:px-8">
         <div className="max-w-[551px] max-lg:max-w-[unset]">
           <h3 className="text-white font-integral-cf text-custom-4xl max-lg:text-4xl max-md:text-custom-3xl font-bold">

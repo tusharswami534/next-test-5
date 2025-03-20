@@ -66,6 +66,18 @@ export const PARTNER_LIST: any = [
   <CalvinKleinLogo logoClassName="max-sm:w-[134px]" />,
 ];
 
+export const COUNT_LIST = [
+  {
+    description: "International Brands",
+  },
+  {
+    description: "High-Quality Products",
+  },
+  {
+    description: "Happy Customers",
+  },
+];
+
 export const NEW_ARRIVALS_LIST: SellItemsType[] = [
   {
     product: "/assets/image/webp/t-shirt-tape-details.webp",
