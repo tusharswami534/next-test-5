@@ -31,11 +31,14 @@ const ProductOverview = () => {
   ];
 
   const product = combinedList.find((item) => {
-    const formattedTitle = title?.toLowerCase().replace(/ /g, "-");
-    const formattedProductTitle = item.productTitle
-      .toLowerCase()
-      .replace(/ /g, "-");
-    return formattedProductTitle === formattedTitle;
+    if (typeof title === "string") {
+      const formattedTitle = title.toLowerCase().replace(/ /g, "-");
+      const formattedProductTitle = item.productTitle
+        .toLowerCase()
+        .replace(/ /g, "-");
+      return formattedTitle === formattedProductTitle;
+    }
+    return false;
   });
 
   console.log("Selected Product:", product);
@@ -51,16 +54,16 @@ const ProductOverview = () => {
             productImageThree={product?.productImageThree}
           />
           <ProductInfo
-            productTitle={product?.productTitle}
+            productTitle={product?.productTitle || ""}
             productStart={product?.productRatingStart}
-            productRating={product?.productRating}
-            productDescription={product?.productDescription}
+            productRating={product?.productRating || 0}
+            productDescription={product?.productDescription || ""}
             productDiscount={product?.discount}
-            price={product?.price}
-            productPrice={product?.productPrice}
+            price={product?.price || 0}
+            productPrice={product?.productPrice || 0}
             cart={cart}
             setCart={setCart}
-            productImage={product?.product}
+            productImage={product?.product || ""}
           />
         </div>
       </div>
