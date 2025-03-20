@@ -24,8 +24,6 @@ const ProductOverview = () => {
     }
   }, []);
 
-  console.log("Title from params:", title);
-
   const combinedList = [
     ...NEW_ARRIVALS_LIST,
     ...TOP_SELLING_LIST,
@@ -43,16 +41,14 @@ const ProductOverview = () => {
     return false;
   });
 
-  console.log("Selected Product:", product);
-
   return (
     <div className="px-4">
       <ToastContainer position="top-center" />
-      <div className="max-w-[1240px] border-t border-solid border-black/10 pt-6 mx-auto container">
-        <div className="flex gap-3 max-sm:gap-1.5 items-center mb-9">
+      <div className="container border-black/10 border-solid border-t max-w-[1240px] mx-auto pt-6">
+        <div className="flex gap-3 items-center max-sm:gap-1.5 mb-9">
           <Link
             href={"/"}
-            className="flex gap-1 max-sm:text-sm text-black/60 items-center"
+            className="flex text-black/60 gap-1 items-center max-sm:text-sm"
           >
             Home{" "}
             <span>
@@ -69,7 +65,7 @@ const ProductOverview = () => {
           </Link>
           <Link
             href={"/cart"}
-            className="flex gap-1 max-sm:text-sm text-black items-center"
+            className="flex text-black gap-1 items-center max-sm:text-sm"
           >
             T-shirts
           </Link>

@@ -72,8 +72,8 @@ const ProductInfo = ({
   };
 
   return (
-    <div className="max-w-[600px] max-xl:max-w-[unset] w-full flex flex-col">
-      <p className="font-integral-cf font-bold text-custom-4xl mb-3.5 max-sm:mb-3 leading-[100%]">
+    <div className="flex flex-col w-full max-w-[600px] max-xl:max-w-[unset]">
+      <p className="text-custom-4xl font-bold font-integral-cf leading-[100%] max-sm:mb-3 mb-3.5">
         {productTitle}
       </p>
       <div className="flex gap-4">
@@ -82,20 +82,20 @@ const ProductInfo = ({
           {productRating}/<span className="text-gray">5</span>
         </p>
       </div>
-      <div className="flex items-center mt-3.5 gap-3">
+      <div className="flex gap-3 items-center mt-3.5">
         {productPrice !== 0 && (
-          <p className="font-bold text-2xl leading-[100%]">${productPrice}</p>
+          <p className="text-2xl font-bold leading-[100%]">${productPrice}</p>
         )}
         {price !== 0 && (
           <span className="w-max relative">
-            <span className="absolute top-[56%] w-full h-[1px] bg-bold-gray"></span>
-            <p className="relative text-bold-gray text-2xl font-bold">
+            <span className="bg-bold-gray h-[1px] w-full absolute top-[56%]"></span>
+            <p className="text-2xl text-bold-gray font-bold relative">
               ${price}
             </p>
           </span>
         )}
         {productDiscount && (
-          <span className="py-1.5 px-[13px] bg-red/10 text-red rounded-[62px] font-xs font-medium">
+          <span className="bg-red/10 rounded-[62px] text-red font-medium font-xs px-[13px] py-1.5">
             {productDiscount}%
           </span>
         )}
@@ -104,7 +104,7 @@ const ProductInfo = ({
         descriptionClass="text-black/60 mt-5"
         text={productDescription}
       />
-      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="bg-black/10 h-[1px] w-full max-w-[590px] max-xl:max-w-[unset] my-6"></div>
       <CommonDescription
         descriptionClass="text-black/60"
         text="Select Colors"
@@ -120,7 +120,7 @@ const ProductInfo = ({
           </button>
         ))}
       </div>
-      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="bg-black/10 h-[1px] w-full max-w-[590px] max-xl:max-w-[unset] my-6"></div>
       <CommonDescription descriptionClass="text-black/60" text="Choose Size" />
       <div className="flex gap-3 max-sm:gap-2 mt-4">
         {SELECT_SIZE.map((item, index) => (
@@ -135,17 +135,17 @@ const ProductInfo = ({
           </button>
         ))}
       </div>
-      <div className="max-w-[590px] max-xl:max-w-[unset] w-full bg-black/10 h-[1px] my-6"></div>
+      <div className="bg-black/10 h-[1px] w-full max-w-[590px] max-xl:max-w-[unset] my-6"></div>
       <div className="flex gap-5">
-        <div className="bg-light-blue rounded-[62px] flex py-3.5 px-5 items-center gap-[38px]">
+        <div className="flex bg-light-blue rounded-[62px] gap-[38px] items-center px-5 py-3.5">
           <button
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            className="flex w-[18.5px] cursor-pointer h-0.5 bg-black rounded-2xl"
+            className="flex bg-black h-0.5 rounded-2xl w-[18.5px] cursor-pointer"
           ></button>
-          <p className="font-medium min-w-5 leading-[100%]">{quantity}</p>
+          <p className="font-medium leading-[100%] min-w-5">{quantity}</p>
           <button
             onClick={() => setQuantity(quantity + 1)}
-            className="flex cursor-pointer w-[18.5px] h-0.5 bg-black rounded-2xl relative after:w-[18.5px] after:h-0.5 after:bg-black after:rounded-2xl after:absolute after:top-0 after:rotate-90"
+            className="flex bg-black h-0.5 rounded-2xl w-[18.5px] after:absolute after:bg-black after:h-0.5 after:rotate-90 after:rounded-2xl after:top-0 after:w-[18.5px] cursor-pointer relative"
           ></button>
         </div>
         <CustomButton

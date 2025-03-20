@@ -29,7 +29,7 @@ const SellItems = ({
         spaceBetween={20}
         breakpoints={{
           0: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.8,
           },
           768: {
             slidesPerView: 3,
@@ -46,40 +46,40 @@ const SellItems = ({
               href={`/product/${item.productTitle
                 .toLocaleLowerCase()
                 .replaceAll(" ", "-")}`}
-              className="max-w-[295px] w-full rounded-[20px]"
+              className="rounded-[20px] w-full max-sm:max-w-[198px] max-w-[295px]"
             >
-              <div className="bg-dark-gray overflow-hidden group rounded-[20px]">
+              <div className="flex bg-dark-gray justify-center rounded-[20px] group max-sm:rounded-[13px] overflow-hidden">
                 <Image
                   src={item.product}
                   alt="product"
                   width={295}
                   height={298}
-                  className="h-[298px] group-hover:scale-95 object-cover transition-all duration-300 w-[295px]"
+                  className="h-[298px] w-[295px] duration-300 group-hover:scale-95 max-sm:h-[200px] max-sm:object-contain max-sm:w-[198px] object-cover transition-all"
                 />
               </div>
-              <p className="font-bold text-xl mt-4 leading-[100%]">
+              <p className="text-xl font-bold leading-[100%] mt-4">
                 {item.productTitle}
               </p>
-              <span className="flex items-center py-2 gap-[13px]">
+              <span className="flex gap-[13px] items-center py-2">
                 <span>{item.productRatingStart}</span>
                 <p className="text-sm">
                   {item.productRating}/<span className="text-gray">5</span>
                 </p>
               </span>
               <span className="flex gap-2.5 items-center">
-                <p className="font-bold text-2xl leading-[100%]">
+                <p className="text-2xl font-bold leading-[100%]">
                   ${item.productPrice}
                 </p>
                 {item.price && (
                   <span className="w-max relative">
-                    <span className="absolute top-[56%] w-full h-[1px] bg-bold-gray"></span>
-                    <p className="relative text-bold-gray text-2xl font-bold ">
+                    <span className="bg-bold-gray h-[1px] w-full absolute top-[56%]"></span>
+                    <p className="text-2xl text-bold-gray font-bold relative">
                       ${item.price}
                     </p>
                   </span>
                 )}
                 {item.discount && (
-                  <span className="py-1.5 px-[13px] bg-red/10 text-red rounded-[62px] font-xs font-medium">
+                  <span className="bg-red/10 rounded-[62px] text-red font-medium font-xs px-[13px] py-1.5">
                     {item.discount}%
                   </span>
                 )}
@@ -89,7 +89,7 @@ const SellItems = ({
         ))}
       </Swiper>
       {buttonText && (
-        <div className="w-full flex justify-center items-center pt-[51px]">
+        <div className="flex justify-center w-full items-center max-lg:pt-12 max-md:pt-8 max-sm:pt-6 pt-[51px]">
           <CustomButton
             buttonClass="py-[13px] px-[78px] hover:bg-black hover:text-white border-black/10 font-medium"
             buttonText={buttonText}

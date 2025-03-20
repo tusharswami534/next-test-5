@@ -3,18 +3,30 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HEADER_LIST } from "../../utils/helper";
 import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
-import { cartItemLength } from "../cart/Cart";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [cartLength, setCartLength] = useState(0);
+
+  useEffect(() => {
+    const updateCartLength = () => {
+      const storedCart = localStorage.getItem("cart");
+      const cartData = storedCart ? JSON.parse(storedCart) : [];
+      setCartLength(cartData.length);
+    };
+    updateCartLength();
+    window.addEventListener("storage", updateCartLength);
+    return () => window.removeEventListener("storage", updateCartLength);
+  }, []);
+
   return (
     <div className="px-4">
-      <div className="max-w-[1240px] py-6 container mx-auto">
-        <div className="flex items-center gap-10 max-md:justify-between max-xl:gap-8 max-lg:gap-6">
+      <div className="container max-w-[1240px] mx-auto py-6">
+        <div className="flex gap-10 items-center max-lg:gap-6 max-md:justify-between max-xl:gap-8">
           <div className="flex gap-4 items-center">
             <button
-              className="md:hidden h-[15px] relative z-50 overflow-hidden w-[19px] flex flex-col justify-between"
+              className="flex flex-col h-[15px] justify-between w-[19px] md:hidden overflow-hidden relative z-50"
               onClick={() => setIsOpen(!isOpen)}
             >
               <span
@@ -35,7 +47,7 @@ const Header = () => {
             </button>
             <Link
               href={"/"}
-              className="text-custom-3xl font-bold leading-[100%] max-lg:text-3xl max-md:text-[25.2px] font-integral-cf"
+              className="text-custom-3xl font-bold font-integral-cf leading-[100%] max-lg:text-3xl max-md:text-[25.2px]"
             >
               SHOP.CO
             </Link>
@@ -46,23 +58,23 @@ const Header = () => {
             }`}
           >
             {HEADER_LIST.map((item, index) => (
-              <div key={index} className="relative group">
+              <div key={index} className="group relative">
                 <Link
                   href={item.link}
-                  className="leading-[100%] whitespace-nowrap flex gap-1 items-center"
+                  className="flex gap-1 items-center leading-[100%] whitespace-nowrap"
                 >
                   {item.title} {item.submenu && <DropDownArrow />}
                 </Link>
                 {item.submenu && (
-                  <div className="absolute hidden group-hover:block bg-white shadow-md z-10">
+                  <div className="bg-white shadow-md absolute group-hover:block hidden z-10">
                     <ul className="p-2">
                       {item.submenu.map((subItem, subIndex) => (
                         <li
                           key={subIndex}
-                          className="py-1 px-4 hover:bg-gray-100"
+                          className="hover:bg-gray-100 px-4 py-1"
                         >
                           <Link
-                            className=" whitespace-nowrap"
+                            className="whitespace-nowrap"
                             href={subItem.link}
                           >
                             {subItem.title}
@@ -76,8 +88,8 @@ const Header = () => {
             ))}
           </div>
           {/* Searc Icon and cart Icon */}
-          <div className="flex gap-10 md:w-full items-center max-sm:gap-3">
-            <div className="max-w-[577px] max-md:hidden flex items-center bg-light-blue rounded-[62px] w-full gap-3.5 py-3.5 px-[18px]">
+          <div className="flex gap-10 items-center max-sm:gap-3 md:w-full">
+            <div className="flex bg-light-blue rounded-[62px] w-full gap-3.5 items-center max-md:hidden max-w-[577px] px-[18px] py-3.5">
               <label className="cursor-pointer" htmlFor="search">
                 <SearchIcon fill="fill-black/40" />
               </label>
@@ -85,7 +97,7 @@ const Header = () => {
                 <input
                   id="search"
                   placeholder="Search for products..."
-                  className="w-full text-black/40 outline-none"
+                  className="text-black/40 w-full outline-none"
                   type="text"
                 />
               </div>
@@ -96,9 +108,11 @@ const Header = () => {
             <div>
               <Link href={"/cart"} className="relative">
                 <CartIcon />
-                <span className=" absolute top-[-15px] right-[-5px]">
-                  {cartItemLength}
-                </span>
+                {cartLength > 0 && (
+                  <span className="flex bg-red-500 h-5 justify-center rounded-full text-white text-xs w-5 -right-2 -top-2 absolute items-center">
+                    {cartLength}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
