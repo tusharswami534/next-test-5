@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CommonDescription from "../common/CommonDescription";
 import { SelectIcon } from "@/utils/icons";
 import { SELECT_COLOR, SELECT_SIZE } from "@/utils/helper";
@@ -29,9 +28,28 @@ const ProductInfo = ({
   setCart: Function;
   productImage: string;
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0); // For color
+  const [activeButton, setActiveButton] = useState(0); // For size
   const [quantity, setQuantity] = useState(1);
+
+  // Load selected values from localStorage when the component mounts
+  useEffect(() => {
+    const storedColorIndex = localStorage.getItem("selectedColorIndex");
+    const storedSizeIndex = localStorage.getItem("selectedSizeIndex");
+
+    if (storedColorIndex !== null) {
+      setActiveIndex(parseInt(storedColorIndex, 10));
+    }
+    if (storedSizeIndex !== null) {
+      setActiveButton(parseInt(storedSizeIndex, 10));
+    }
+  }, []);
+
+  // Save selected values to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem("selectedColorIndex", activeIndex.toString());
+    localStorage.setItem("selectedSizeIndex", activeButton.toString());
+  }, [activeIndex, activeButton]);
 
   const handleAddToCart = () => {
     const selectedProduct = {
@@ -51,7 +69,7 @@ const ProductInfo = ({
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       toast.success("Item Added To Your Cart");
     } else {
-      toast.error("This Item Allready Exists In Your Cart");
+      toast.error("This Item Already Exists In Your Cart");
     }
   };
 
@@ -67,11 +85,13 @@ const ProductInfo = ({
         </p>
       </div>
       <div className="flex items-center mt-3.5 gap-3">
-        <p className="font-bold text-2xl leading-[100%]">${productPrice}</p>
-        {price && (
+        {productPrice !== 0 && (
+          <p className="font-bold text-2xl leading-[100%]">${productPrice}</p>
+        )}
+        {price !== 0 && (
           <span className="w-max relative">
             <span className="absolute top-[56%] w-full h-[1px] bg-bold-gray"></span>
-            <p className="relative text-bold-gray text-2xl font-bold ">
+            <p className="relative text-bold-gray text-2xl font-bold">
               ${price}
             </p>
           </span>
