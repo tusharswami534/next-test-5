@@ -51,6 +51,10 @@ body{
   --font-integral-cf: "integral-cf", "sans-serif";
 }
 
+.font-integral-cf {
+  font-variant-numeric: lining-nums proportional-nums !important;
+}
+
 .footer-bg{
   background: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(240,240,240,1) 15%);
 }

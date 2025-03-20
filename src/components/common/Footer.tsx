@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="footer-bg px-4">
       <About />
       <div className="max-w-[1240px] mx-auto  container">
-        <div className="flex gap-[113.5px] max-lg:gap-0 py-[50px] max-sm:py-[31px] max-md:py-10 max-lg:py-12 max-lg:flex-col gap-y-10">
+        <div className="flex gap-[113.5px] max-lg:gap-0 py-[50px] max-sm:py-[31px] max-md:py-10 max-lg:py-12 max-[1025px]:flex-col gap-y-10">
           <div className="max-w-[248px] max-lg:max-w-[unset] w-full">
             <Link
               href={"/"}

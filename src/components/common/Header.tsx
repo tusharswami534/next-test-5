@@ -1,11 +1,20 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HEADER_LIST } from "../../utils/helper";
 import { CartIcon, DropDownArrow, SearchIcon } from "../../utils/icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartLength, setCartLength] = useState(0);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      const cart = JSON.parse(storedCart);
+      setCartLength(cart.length);
+    }
+  }, []);
 
   return (
     <div className="px-4">
@@ -93,8 +102,11 @@ const Header = () => {
               <SearchIcon fill="fill-black" />
             </div>
             <div>
-              <Link href={"/cart"}>
+              <Link href={"/cart"} className="relative">
                 <CartIcon />
+                <span className=" absolute top-[-15px] right-[-5px]">
+                  {cartLength}
+                </span>
               </Link>
             </div>
           </div>

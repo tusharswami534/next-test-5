@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/common/Footer";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Shop Co",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
+        <ToastContainer position="top-center" />
         {children}
         <Footer />
       </body>

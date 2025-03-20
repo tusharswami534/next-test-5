@@ -95,7 +95,7 @@ const ProductInfo = ({
         {SELECT_COLOR.map((item, index) => (
           <button
             key={index}
-            className={`size-7 cursor-pointer flex justify-center items-center rounded-full bg-dark-${item}`}
+            className={`size-7 cursor-pointer flex justify-center items-center rounded-full ${item}`}
             onClick={() => setActiveIndex(index)}
           >
             {index === activeIndex && <SelectIcon />}
