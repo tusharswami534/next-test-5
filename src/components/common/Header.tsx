@@ -10,6 +10,10 @@ const Header = () => {
   const [cartLength, setCartLength] = useState(0);
 
   useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
+  useEffect(() => {
     const updateCartLength = () => {
       const storedCart = localStorage.getItem("cart");
       const cartData = storedCart ? JSON.parse(storedCart) : [];
@@ -60,6 +64,7 @@ const Header = () => {
             {HEADER_LIST.map((item, index) => (
               <div key={index} className="group relative">
                 <Link
+                  onClick={() => setIsOpen(false)}
                   href={item.link}
                   className="flex gap-1 items-center transition-all duration-300 hover:scale-105 leading-[100%] whitespace-nowrap"
                 >
@@ -74,6 +79,7 @@ const Header = () => {
                           className="hover:bg-gray-100 px-4 py-1"
                         >
                           <Link
+                            onClick={() => setIsOpen(false)}
                             className="whitespace-nowrap"
                             href={subItem.link}
                           >

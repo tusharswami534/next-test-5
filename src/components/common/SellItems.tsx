@@ -67,19 +67,19 @@ const SellItems = ({
                 </p>
               </span>
               <span className="flex gap-2.5 items-center">
-                <p className="text-2xl font-bold leading-[100%]">
+                <p className="text-2xl max-sm:text-xl font-bold leading-[100%]">
                   ${item.productPrice}
                 </p>
                 {item.price && (
                   <span className="w-max relative">
                     <span className="bg-bold-gray h-[1px] w-full absolute top-[56%]"></span>
-                    <p className="text-2xl text-bold-gray font-bold relative">
+                    <p className="text-2xl max-sm:text-xl text-bold-gray font-bold relative">
                       ${item.price}
                     </p>
                   </span>
                 )}
                 {item.discount && (
-                  <span className="bg-red/10 rounded-[62px] text-red font-medium font-xs px-[13px] py-1.5">
+                  <span className="bg-red/10 rounded-[62px] text-red font-medium font-xs px-[13px] py-1.5 max-sm:py-[3px] max-sm:px-2">
                     {item.discount}%
                   </span>
                 )}
