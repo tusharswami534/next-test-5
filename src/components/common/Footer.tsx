@@ -42,17 +42,17 @@ const Footer = () => {
           </div>
           <div>
             <div className="flex items-center justify-between flex-wrap gap-[113px] max-sm:justify-start max-sm:gap-y-6 max-sm:gap-[50px] max-xl:gap-18 max-md:gap-6 max-lg:pt-10">
-              {FOOTER_LIST.map((item, i) => (
-                <div key={i} className="max-sm:max-w-[130px] max-sm:w-full">
+              {FOOTER_LIST.map((item, index) => (
+                <div key={index} className="max-sm:max-w-[130px] max-sm:w-full">
                   <p className="uppercase font-medium leading-[18px] max-md:text-sm">
                     {item.title}
                   </p>
                   <ul className="pt-[26px] max-md:pt-4">
-                    {item.list.map((list, j) => (
-                      <li key={j} className="pb-4">
+                    {item.list.map((list, i) => (
+                      <li key={i} className="pb-4">
                         <Link
                           href={list.link}
-                          className="leading-[19px] text-black/60 whitespace-nowrap max-md:text-sm"
+                          className="leading-[19px] text-black/60 hover:text-black transition-all duration-300 whitespace-nowrap max-md:text-sm"
                         >
                           {list.title}
                         </Link>

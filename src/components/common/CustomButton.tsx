@@ -3,7 +3,7 @@ interface CustomButtonProps {
   buttonText?: string;
   buttonClass?: string;
   arrow?: any;
-  customOnClick?: () => void;
+  customOnClick?: any;
 }
 
 const CustomButton = ({

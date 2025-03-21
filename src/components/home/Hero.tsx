@@ -21,7 +21,7 @@ const Hero = () => {
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
           <CommonDescription
-            descriptionClass="text-black/60 my-8 max-lg:my-6 max-md:mt-5  max-w-[545px] max-lg:max-w-[unset]"
+            descriptionClass="text-black/60 my-8 max-lg:my-6 max-md:mt-5 max-w-[545px] max-lg:max-w-[unset]"
             text="Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style."
           />
           <CustomButton

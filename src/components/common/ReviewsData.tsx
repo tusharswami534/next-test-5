@@ -14,11 +14,14 @@ const ReviewsData = () => {
 
     const sortedList = [...REVIEWS_LIST].sort((a, b) => {
       const dateA: Date = new Date(a.postDate.split("Posted on ")[1]);
+      console.log(dateA);
       const dateB: Date = new Date(b.postDate.split("Posted on ")[1]);
+      console.log(dateB);
       return option === "Latest"
         ? dateB.getTime() - dateA.getTime()
         : dateA.getTime() - dateB.getTime();
     });
+    console.log(option);
     setSortedReviews(sortedList);
   };
 
@@ -33,7 +36,7 @@ const ReviewsData = () => {
             </p>
           </div>
           <select
-            className="cursor-pointer outline-none rounded-[62px] font-medium py-[13px] px-5 bg-light-blue"
+            className="cursor-pointer outline-none appearance-none drop-down-arrow rounded-[62px] font-medium py-[13px] pl-5 pr-[53px] bg-light-blue"
             value={sortOption}
             onChange={handleSortChange}
           >

@@ -61,12 +61,16 @@ body{
   background: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(240,240,240,1) 15%);
 }
 
-
-
 .happy-swiper .swiper-wrapper .swiper-slide{
   filter: blur(4px);
 }
 
 .happy-swiper .swiper-wrapper .swiper-slide-active , .swiper-slide-next , .swiper-slide-prev{
   filter: blur(0px) !important;
+}
+
+.appearance-none{
+  background-image: url("/assets/image/webp/drop-down-arrow.webp") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 22px center !important;
 }

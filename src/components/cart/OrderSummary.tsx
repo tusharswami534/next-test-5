@@ -52,6 +52,7 @@ const OrderSummary = ({
             />
           </div>
           <CustomButton
+            customOnClick={(e: any) => e.preventDefault()}
             buttonClass="py-[15px] px-[38.5px] max-md:py-4 max-md:px-[25.5px] bg-black hover:bg-white font-medium text-white hover:text-black"
             buttonText="Apply"
           />

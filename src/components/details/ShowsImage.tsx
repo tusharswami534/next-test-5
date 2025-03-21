@@ -24,7 +24,11 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="Skinny Fit Jeans"
-            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
+            className={`w-[152px] h-[167px] max-sm:w-[111px] rounded-[20px] max-sm:h-[106px] object-cover border border-solid bg-light-blue ${
+              selectedImage === productImage
+                ? "border-black"
+                : "border-transparent"
+            }`}
           />
         </div>
         <div
@@ -36,7 +40,11 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="T-Shirt with Tape Details"
-            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
+            className={`w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] rounded-[20px] object-cover border border-solid bg-light-blue ${
+              selectedImage === productImageTwo
+                ? "border-black"
+                : "border-transparent"
+            }`}
           />
         </div>
         <div
@@ -48,7 +56,11 @@ const ShowsImage = ({
             width={152}
             height={167}
             alt="Vertical Striped Shirt"
-            className="w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] object-cover bg-light-blue"
+            className={`w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] rounded-[20px] object-cover border border-solid bg-light-blue ${
+              selectedImage === productImageThree
+                ? "border-black"
+                : "border-transparent"
+            }`}
           />
         </div>
       </div>
