@@ -65,6 +65,7 @@ const ProductInfo = ({
       const updatedCart = [...cart, selectedProduct];
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
+      window.dispatchEvent(new Event("cartUpdated"));
       toast.success("Item Added To Your Cart");
     } else {
       toast.error("This Item Already Exists In Your Cart");

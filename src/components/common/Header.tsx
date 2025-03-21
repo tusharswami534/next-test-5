@@ -20,8 +20,10 @@ const Header = () => {
       setCartLength(cartData.length);
     };
     updateCartLength();
-    window.addEventListener("storage", updateCartLength);
-    return () => window.removeEventListener("storage", updateCartLength);
+    window.addEventListener("cartUpdated", updateCartLength);
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartLength);
+    };
   }, []);
 
   return (
