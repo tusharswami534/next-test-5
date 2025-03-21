@@ -61,7 +61,7 @@ const Header = () => {
               <div key={index} className="group relative">
                 <Link
                   href={item.link}
-                  className="flex gap-1 items-center leading-[100%] whitespace-nowrap"
+                  className="flex gap-1 items-center transition-all duration-300 hover:scale-105 leading-[100%] whitespace-nowrap"
                 >
                   {item.title} {item.submenu && <DropDownArrow />}
                 </Link>
