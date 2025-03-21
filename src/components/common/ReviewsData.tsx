@@ -14,14 +14,11 @@ const ReviewsData = () => {
 
     const sortedList = [...REVIEWS_LIST].sort((a, b) => {
       const dateA: Date = new Date(a.postDate.split("Posted on ")[1]);
-      console.log(dateA);
       const dateB: Date = new Date(b.postDate.split("Posted on ")[1]);
-      console.log(dateB);
       return option === "Latest"
         ? dateB.getTime() - dateA.getTime()
         : dateA.getTime() - dateB.getTime();
     });
-    console.log(option);
     setSortedReviews(sortedList);
   };
 
